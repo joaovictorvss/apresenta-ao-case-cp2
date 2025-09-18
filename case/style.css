@@ -1,0 +1,498 @@
+/* ========================================= */
+/* CONFIGURAÇÕES GERAIS E VARIÁVEIS         */
+/* ========================================= */
+
+:root {
+    /* Base Colors */
+    --gray1-background: #121214; /* gray1 (background) */
+    --gray2-shape-principal: #202024; /* gray2 (shape principal) */
+    --gray3-shape-secundaria: #29292E; /* gray3 (shape secundaria) */
+    --gray4-shape-terciaria: #323238; /* gray4 (shape terciaria) */
+    --white: #FFFFFF; /* white */
+
+    /* Product Colors */
+    --green: #00B37E; /* green */
+    --red: #F75A68; /* red */
+
+    /* Highlight Color */
+    --orange: #FAAE2B; /* orange */
+}
+
+body {
+    background-color: var(--gray1-background);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: subir-suavemente 0.8s ease-out;
+}
+
+@keyframes subir-suavemente {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================= */
+/* ESTILO DO CABEÇALHO E BOTÕES             */
+/* ========================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-area img {
+    height: 96px;
+    width: 96px;
+    margin-right: 48px;
+}
+
+header button {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+header button:hover {
+    background-color: #f7a027;
+}
+
+header button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================= */
+/* ESTILO DOS CARTÕES DE RESUMO             */
+/* ========================================= */
+
+section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 50px;
+    gap: 50px;
+}
+
+section div {
+    background-color: var(--gray3-shape-secundaria);
+    padding: 30px;
+    border-radius: 6px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+section div:hover {
+    transform: translateY(-5px);
+}
+
+section div h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    opacity: 0.6;
+    margin: 0;
+}
+
+section div p {
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+section div .icone-canto {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+}
+
+section div:last-child {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+/* ========================================= */
+/* ESTILO DA BARRA DE BUSCA E BOTÃO 'BUSCAR'*/
+/* ========================================= */
+
+.search-bar {
+    background-color: var(--gray2-shape-principal);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+    padding: 15px 20px;
+    margin: 0 50px 20px 50px;
+}
+
+.search-bar input {
+    flex: 1;
+    background-color: transparent;
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+
+.search-bar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.1s;
+}
+
+.search-bar button svg {
+    margin-right: 8px;
+}
+
+.search-bar button:hover {
+    background-color: var(--orange);
+    color: var(--gray2-shape-principal);
+    border: 1px solid var(--orange);
+}
+
+.search-bar button:active {
+    transform: translateY(1px);
+}
+
+
+/* ========================================= */
+/* ESTILO DA TABELA DE TRANSAÇÕES           */
+/* ========================================= */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    background-color: var(--gray3-shape-secundaria);
+    border-radius: 6px;
+    margin: 0 50px;
+}
+
+table thead th {
+    text-align: left;
+    padding: 20px;
+    color: #999;
+    font-weight: normal;
+    background-color: var(--gray2-shape-principal);
+}
+
+table tbody tr {
+    background-color: var(--gray3-shape-secundaria);
+    border-top: 1px solid var(--gray4-shape-terciaria);
+    border-radius: 6px;
+}
+
+table tbody td {
+    color: var(--white);
+    padding: 20px;
+}
+
+.entrada {
+    color: var(--green);
+}
+
+.saida {
+    color: var(--red);
+}
+
+table tbody td:first-child {
+    padding-left: 20px;
+}
+
+/* ========================================= */
+/* ESTILO DO POP-UP DO FORMULÁRIO           */
+/* ========================================= */
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: var(--gray2-shape-principal);
+    padding: 30px;
+    border-radius: 6px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: var(--white);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--white);
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--red);
+}
+
+.modal-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.modal-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#descricao, #categoria {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gray4-shape-terciaria);
+    border-radius: 4px;
+    background-color: var(--gray4-shape-terciaria);
+    color: var(--white);
+    box-sizing: border-box;
+}
+
+#preco {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gray4-shape-terciaria);
+    border-radius: 4px;
+    background-color: var(--gray4-shape-terciaria);
+    color: var(--white);
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+
+.preco-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.preco-container::before {
+    content: "R$";
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    color: #999;
+}
+
+.tipo-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tipo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: transparent;
+    border: 1px solid var(--gray4-shape-terciaria);
+    border-radius: 6px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tipo-box:hover {
+    background-color: var(--gray4-shape-terciaria);
+    border-color: var(--white);
+}
+
+.tipo-box.selected {
+    border-color: var(--green);
+    background-color: var(--gray4-shape-terciaria);
+}
+
+.tipo-box.selected.saida-box {
+    border-color: var(--red);
+    background-color: var(--gray4-shape-terciaria);
+}
+
+.tipo-box span {
+    margin-left: 8px;
+}
+
+.tipo-box img {
+    height: 16px;
+    width: 16px;
+}
+
+.modal-box .submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--orange);
+    color: var(--gray2-shape-principal);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-box .submit-button:hover {
+    background-color: #fca311;
+}
+
+/* ========================================= */
+/* ANIMAÇÕES                                */
+/* ========================================= */
+
+@keyframes flashTotal {
+    0% { background-color: var(--orange); transform: scale(1); }
+    50% { background-color: #fca311; transform: scale(1.02); }
+    100% { background-color: var(--orange); transform: scale(1); }
+}
+
+.card-total-animado {
+    animation: flashTotal 1s ease-out;
+}
+
+@keyframes flashEntrada {
+    0% { background-color: var(--gray3-shape-secundaria); transform: scale(1); }
+    50% { background-color: var(--green); transform: scale(1.02); }
+    100% { background-color: var(--gray3-shape-secundaria); transform: scale(1); }
+}
+
+.card-entrada-animado {
+    animation: flashEntrada 1s ease-out;
+}
+
+@keyframes flashSaida {
+    0% { background-color: var(--gray3-shape-secundaria); transform: scale(1); }
+    50% { background-color: var(--red); transform: scale(1.02); }
+    100% { background-color: var(--gray3-shape-secundaria); transform: scale(1); }
+}
+
+.card-saida-animado {
+    animation: flashSaida 1s ease-out;
+}
+
+@keyframes subir-suavemente {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================= */
+/* ESTILOS DE RESPONSIVIDADE                */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    header,
+    section,
+    main {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    section {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    section div,
+    .search-bar,
+    .search-bar input,
+    .search-bar button {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .search-bar button {
+        margin-top: 10px;
+    }
+
+    table {
+        margin-top: 20px;
+    }
+
+    .tabela-responsiva {
+        overflow-x: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .modal-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
+/* Animação para as linhas da tabela */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tabela-body-animada tr {
+    animation: fadeInSlideUp 0.5s ease-out forwards;
+}
